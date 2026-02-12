@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  @author   Gaby Suriel
+  @project  Project 1: Medford Midlines
+  @page     Music
+  @date     Feb 10, 2026
+
+  TABLE OF CONTENTS
+  1. Navigation
+  2. Album Hero
+  3. Tracklist
+  4. Pre-order/Sales
+  5. Footer
+  6. JavaScript
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Medford Midlines</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================================ NAVIGATION ================================ -->
+
+<nav class="navbar">
+    <div class="logo">MEDFORD MIDLINES</div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ================================ ALBUM AD ================================ -->
+<!-- NOTE: A place for the band to show their new cover album, sort of like an AD. -->
+
+<section class="album-hero">
+    <div class="album-container">
+
+        <!-- Album Cover -->
+        <div class="album-cover">
+            <img src="images/album-cover.png" alt="Medford to Maine Album Cover">
+        </div>
+
+        <!-- Album Info -->
+        <div class="album-info">
+            <h1>Medford to Maine</h1>
+            <p class="album-subtitle">Latest Release • 2026</p>
+
+            <p class="album-description">
+                A high-energy collection of indie rock covers and original-inspired arrangements.
+                From Boston basements to coastal Maine festivals, this release captures the live
+                sound and spirit of Medford Midlines.
+            </p>
+
+            <div class="streaming-buttons">
+                <a href="#" class="stream-btn">Listen on Spotify</a>
+                <a href="#" class="stream-btn">Listen on Apple Music</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================================ TRACKLIST ================================ -->
+<!-- NOTE: List of songs with live recording locations from the live album. Shows genre breadth. -->
+
+<section class="tracklist-section">
+    <div class="tracklist-container">
+
+        <h2>Tracklist</h2>
+
+        <ul class="tracklist">
+            <li>Mr. Brightside – The Killers (Live at Harbor Hall, Boston, MA)</li>
+            <li>Dog Days Are Over – Florence + The Machine (Live at The Wharf, Portland, ME)</li>
+            <li>Take Me Out – Franz Ferdinand (Live at The Underground, Cambridge, MA)</li>
+            <li>Riptide – Vance Joy (Live at Riverfront Stage, Providence, RI)</li>
+            <li>Electric Feel – MGMT (Live at Back Bay Pavilion, Boston, MA)</li>
+            <li>Somebody Told Me – The Killers (Live at Pine State Festival, ME)</li>
+            <li>1901 – Phoenix (Live at Harbor Lights Fest, NH)</li>
+            <li>Midnight City – M83 (Live at Capitol Square, Hartford, CT)</li>
+            <li>Dreams – Fleetwood Mac (Live at Coastal Soundstage, ME)</li>
+            <li>Shut Up and Dance – WALK THE MOON (Encore – Portland, ME)</li>
+        </ul>
+
+    </div>
+</section>
+
+<!-- ================================ PRE-ORDER / SALES ================================ -->
+<!-- NOTE: Allow artists to sell or get pre-orders. Ad or sales space. Even for merch perhaps. -->
+
+<section class="audio-preview">
+    <div class="audio-card">
+<h1>NEW ALBUM: Medford to Maine</h1>
+
+<p class="album-subtitle">
+    Available February 10, 2026
+</p>
+
+        <p class="album-description">
+            Our debut full-length album is officially available for pre-order.
+            Featuring high-energy indie rock anthems, festival favorites,
+            and brand new originals. This release captures the raw,
+            live sound of Medford Midlines in crisp dolby atmos quality.
+        </p>
+
+        <button class="btn">Pre-Order $9.00</button>
+
+    </div>
+</section>
+
+<!-- ================================ FOOTER ================================ -->
+<!-- NOTE: Footer has band contact info, navigation links, and social icons -->
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <!-- Left -->
+        <div class="footer-left">
+            <h4>MEDFORD MIDLINES</h4>
+            <p>New England Indie Rock Cover Band</p>
+            <p>Based in Medford, MA</p>
+        </div>
+
+        <!-- Center Links -->
+        <div class="footer-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="music.html">Music</a>
+            <a href="tour.html">Tour</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-right">
+            <p><a href="mailto:contact@medfordmidlines.com">contact@medfordmidlines.com</a></p>
+            <p>(123) - 456 - 7890</p>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="https://www.tiktok.com/"><img src="images/tiktok.png" alt="TikTok"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © MEDFORD MIDLINES | MADE BY GSURIE01 | EXAMPLE MADE FOR CLASS
+    </div>
+</footer>
+
+<!-- ================================ JAVASCRIPT ================================ -->
+<!-- NOTE: Toggles hamburger menu open/close and swaps icon -->
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("navLinks");
+    var burger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+
+    if (menu.classList.contains("active")) {
+        burger.innerHTML = "✕";
+    } else {
+        burger.innerHTML = "☰";
+    }
+}
+</script>
+
+</body>
+</html>

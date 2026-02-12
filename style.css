@@ -1,0 +1,1139 @@
+/*
+  @author   Gaby Suriel
+  @project  Project 1: Medford Midlines
+  @page     style.css
+  @date     Feb 10, 2026
+
+  CSS TABLE OF CONTENTS
+  1. Reset
+  2. Base / Global
+  3. Typography
+  4. Buttons
+  5. Navigation
+  6. Mobile Menu
+  7. Hero
+  8. Ticker
+  9. About Section
+  10. Live Shows
+  11. Booking Section
+  12. Contact Section
+  13. Tour Section
+  14. Music / Album Section
+  15. Footer
+  16. Responsive
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ===================== SITE DEFAULTS/TYPOGRAPHY ================================ */
+/* NOTE: Establishes the site defaults for text. Smooth scroll for better UX. */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #000;
+    color: white;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Khand', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #B7ACA2;
+}
+
+/* =========================== CTAs/BUTTONS ================================ */
+/* NOTE: CSS for the buttons used for website sections. */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 221px;
+    height: 51px;
+
+    background: #320B01;
+    border: 1px solid #4B1C0F;
+    border-radius: 14px;
+
+    color: #B7ACA2;
+    font-family: 'Khand', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(5px);
+
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================================ NAVIGATION ================================ */
+/* NOTE: CSS for the primary top navigational bar with hamburger icon when screensize is small. */
+
+/* cursor:pointer added so users can see that they can click hamburger menu for better UX */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: #B7ACA2;
+    cursor: pointer;
+}
+
+/* space-between added so the band logo and links will be on opposite ends of navigational bar */
+.navbar {
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+/* logo is just band name written in the khand google font typography. */
+.logo {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #B7ACA2;
+    font-size: 20px;
+    font-family: 'Khand', sans-serif;
+    transition: 0.3s;
+}
+
+/* Added a hover effect, so when users hover over menu text links, color will change. */
+.nav-links a:hover {
+    color: #924848;
+}
+
+
+/* ========================== HAMBURGER/MOBILE MENU ================================ */
+/* NOTE: Fullscreen mobile menu will show when mobile users click hamburger menu. */
+/* Used pointer-events to support having full screen hamburger when hidden/active. */
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+/* z-index is used to make the menu basically top layer above all when active */
+    z-index: 2000;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    font-family: 'Khand', sans-serif;
+    font-size: 32px;
+    color: #B7ACA2;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.menu-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #B7ACA2;
+}
+
+
+/* ================================ HERO ================================ */
+/* NOTE: Full-width banner with background image, dark color overlay.
+Image is from royalty free stock photo from Unsplash. */
+
+.hero {
+    height: 70vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url("images/band.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Khand', sans-serif;
+    font-weight: 400;
+    font-size: 68px;
+    letter-spacing: 5px;
+    color: #B7ACA2;
+    margin-bottom: 1px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 20px;
+}
+
+
+/* ================================ TICKER ================================ */
+/* NOTE: Scrolling marquee animation to draw in user attention and show important info. */
+
+.ticker {
+    background-color: #320B01;
+    overflow: hidden;
+
+ /* white-space nowrap used so text does not wrap. The text needs to be in a single line for ticker. */
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.ticker-track {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+}
+
+.ticker-track span {
+    color: #BCAC9F;
+    font-size: 25px;
+    font-family: 'Khand', sans-serif;
+    letter-spacing: 2px;
+    margin: 0 20px;
+    text-transform: uppercase;
+}
+
+/* Makes the text scroll horizontally across the ticker on page.*/
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
+/* ================================ ABOUT SECTION ================================ */
+
+.about-section {
+    background:
+        url("images/about-texture.png") center / cover no-repeat,
+        #DBCBC0;
+    padding: 50px 5% 20px 5%;
+    color: #2a1a14;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1 1 520px;
+    min-width: 0;
+    max-width: 600px;
+}
+
+.about-text h5 {
+    font-family: 'Khand', sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 30px;
+    color: #320B01;
+    margin-bottom: 1px;
+}
+
+.about-text h2 {
+    font-family: 'Khand', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    color: #320B01;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #2a1a14;
+}
+
+.about-btn {
+    background: #320B01;
+    color: #B7ACA2;
+    border: 1px solid #4B1C0F;
+}
+
+.about-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.stat h3 {
+    font-family: 'Khand', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #320B01;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #2a1a14;
+}
+
+/* This is for the dividers in between the stats. The thin lines. */
+.stat:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0,0.15);
+    padding-right: 40px;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 420px;
+}
+
+.image-frame {
+    background: url("images/photo-frame.png") center/cover no-repeat;
+    padding: 35px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.image-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+/* Took out the spotify CTA from this section. Want to rethink it. Was in wireframe, but removed for now. */
+
+
+
+
+
+/* ================================ ABOUT PAGE ================================ */
+/* New about page, designed to keep theme/aesthetics maintained throughout site. */
+/* Decided to alternate member images down page for nicer UI than straight line down. */
+
+.about-intro {
+    background:
+        linear-gradient(
+            rgba(20, 5, 2, 0.85),
+            rgba(20, 5, 2, 0.85)
+        ),
+        url("images/about-bg.jpg") center/cover no-repeat;
+    padding: 100px 20px 100px 20px;
+    text-align: center;
+}
+
+.about-intro-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-intro-inner h1 {
+    font-family: 'Khand', sans-serif;
+    font-size: 50px;
+    color: #B7ACA2;
+    margin-bottom: 25px;
+}
+
+.about-intro-inner p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 20px;
+}
+
+/* Member Individual Bio Sections */
+
+.member-section {
+    background-color: #0c0402;
+    padding: 100px 80px;
+}
+
+.member-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+
+/* Used flex-direction: row-reverse to help visually alternate bio sections. */
+.member-section.alt .member-container {
+    flex-direction: row-reverse;
+}
+
+.member-image img {
+    width: 300px;
+    height: 300px;
+    border: 6px solid #1c0e08;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.member-info {
+    max-width: 500px;
+}
+
+.member-info h2 {
+    font-family: 'Khand', sans-serif;
+    font-size: 42px;
+    color: #B7ACA2;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+}
+
+/* Increased line height to better fit aesthetic. */
+.member-info p {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+}
+
+
+/* ================================ LIVE SHOWS ================================ */
+/* NOTE: Section on homepage. Background image and all logos original. */
+
+.live-shows {
+    background:
+        linear-gradient(rgba(40,15,5,0.8), rgba(20,5,2,0.9)),
+        url("images/concert.svg") center/cover no-repeat;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.live-overlay h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.live-overlay p {
+    font-size: 16px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+
+.venue-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Added hover/visual effects to logos for desktop users. */
+
+.venue-logos img {
+    max-height: 80px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.venue-logos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+/* ================================ BOOKING SECTION ================================ */
+/* NOTE: Section on homepage. Card background image made by me. Icons from Canva. */
+/* z-index used for layering as my original concept idea has a background image,
+   a dark gradient overlay on top, and then the content on the very top.  */
+
+.booking {
+    position: relative;
+    padding: 140px 20px;
+    background-color: #1a0502;
+    overflow: hidden;
+}
+
+.booking::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/booking-bg.png") center/cover no-repeat;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.booking::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(5, 1, 0, 0.85),
+        rgba(20, 5, 2, 0.95)
+    );
+    z-index: 1;
+}
+
+.booking > * {
+    position: relative;
+    z-index: 2;
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.booking-header h2 {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.booking-header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.booking-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+/* Booking Form Card */
+/* Custom designed the card, background image and all, original to look rustic. */
+.booking-form {
+    display: flex;
+    justify-content: center;
+}
+
+.booking-card-bg {
+    background: url("images/card-vector.png") center / cover no-repeat;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 520px;
+    padding: 60px 50px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+}
+
+.booking-card-content {
+    text-align: center;
+}
+
+.booking-card-content h3 {
+    font-family: 'Khand', sans-serif;
+    font-size: 30px;
+    color: #DBCBC0;
+    margin-bottom: 10px;
+}
+
+.booking-card-content p {
+    font-size: 16px;
+    margin-bottom: 35px;
+    color: rgba(255,255,255,0.8);
+}
+
+.booking-card-content input,
+.booking-card-content textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: transparent;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.booking-card-content input:focus,
+.booking-card-content textarea:focus {
+    outline: none;
+    border-color: #DBCBC0;
+}
+
+.booking-card-content .btn {
+    margin-top: 10px;
+}
+
+/* Event Types */
+
+.event-types {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 40px;
+}
+
+/* Added hover effect akin to the venue icons. */
+.event img {
+    width: 90px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+.event img:hover {
+    transform: translateY(-6px);
+}
+
+.event p {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* ================================ CONTACT SECTION ================================ */
+/* NOTE:Styling for the contact page. */
+
+.contact-section {
+    background: #0c0402;
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 700px;
+}
+
+.contact-card {
+    background: rgba(50, 11, 1, 0.85);
+    border: 1px solid #4B1C0F;
+    border-radius: 14px;
+    padding: 50px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.contact-card h2 {
+    font-family: 'Khand', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: #B7ACA2;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #B7ACA2;
+}
+
+
+/* ================================ TOUR SECTION ================================ */
+/* NOTE: Tour dates table with hover effects on the rows. If this was a real
+band website, I would have the buttons here link to ticketmaster or where they
+would sell tickets. */
+
+.tour-intro {
+    background:
+        linear-gradient(
+            rgba(20, 5, 2, 0.85),
+            rgba(20, 5, 2, 0.85)
+        ),
+        url("images/concert.jpg") center/cover no-repeat;
+
+    padding: 100px 20px 80px 20px;
+    text-align: left;
+}
+
+.tour-intro-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.tour-intro-inner h1 {
+    font-family: 'Khand', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #B7ACA2;
+    margin-bottom: 20px;
+}
+
+.tour-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #B7ACA2;
+    margin: 0 auto 30px auto;
+
+}
+
+.tour-section {
+    background: #0c0402;
+    padding: 80px 20px;
+}
+
+/* Added overflow-x auto for responsiveness. */
+.tour-container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+/* Tour table styling */
+.tour-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tour-table th,
+.tour-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #ddd;
+}
+
+.tour-table th {
+    font-family: 'Khand', sans-serif;
+    font-size: 18px;
+    color: #B7ACA2;
+}
+
+.tour-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.ticket-btn {
+    font-size: 13px;
+    padding: 8px 18px;
+    width: auto;
+    background: rgba(50, 11, 1, 0.85);
+    border: 1px solid #4B1C0F;
+    color: #B7ACA2;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+}
+
+
+/* ================================ MUSIC / ALBUM SECTION ================================ */
+/* NOTE: Custom designed page with custom designed album cover to showcase an artist's upcoming
+album release or streaming catalog. Had fun with it. Page also lets users see example covers. */
+
+.album-hero {
+    background: linear-gradient(
+        rgba(20,5,2,0.85),
+        rgba(20,5,2,0.9)
+    ),
+    url("images/album-cover.png") center/cover no-repeat;
+
+    padding: 120px 80px;
+}
+
+.album-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.album-cover img {
+    width: 320px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    border: 6px solid #1c0e08;
+}
+
+.album-info {
+    max-width: 500px;
+}
+
+.album-info h1 {
+    font-family: 'Khand', sans-serif;
+    font-size: 60px;
+    color: #B7ACA2;
+    margin-top: -50px;
+    margin-bottom: 10px;
+}
+
+.album-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 25px;
+}
+
+.album-description {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.streaming-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.stream-btn {
+    padding: 12px 24px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border: 1px solid #4B1C0F;
+    background: #320B01;
+    color: white;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.7);
+    transition: 0.3s;
+}
+
+/* Hover effect for the buttons. */
+.stream-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Tracklist */
+
+.tracklist-section {
+    background-color: #0c0402;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.tracklist-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tracklist-section h2 {
+    font-family: 'Khand', sans-serif;
+    font-size: 42px;
+    color: #B7ACA2;
+    margin-bottom: 40px;
+}
+
+.tracklist {
+    list-style: none;
+    padding: 0;
+}
+
+.tracklist li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Audio Preview */
+
+.audio-preview {
+    background-color: #140502;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.audio-card {
+    background: rgba(50,11,1,0.85);
+    border: 1px solid #4B1C0F;
+    border-radius: 14px;
+    padding: 50px;
+    text-align: center;
+    max-width: 500px;
+    backdrop-filter: blur(6px);
+}
+
+.audio-card h3 {
+    font-family: 'Khand', sans-serif;
+    font-size: 32px;
+    color: #B7ACA2;
+    margin-bottom: 15px;
+}
+
+.audio-card p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 25px;
+}
+
+
+/* ================================ FOOTER ================================ */
+/* NOTE: Three-column footer with logo, navigational links, contact info and social icons. */
+/* Added hover effects and responsiveness for mobile. */
+.footer {
+    background-color: #000;
+    padding-top: 60px;
+}
+
+.footer a {
+    color: #B7ACA2;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #804f4f;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 80px 40px 80px;
+    gap: 40px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+}
+
+.footer-left h4 {
+    font-size: 25px;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 20px;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0.7;
+}
+
+
+/* ================================ RESPONSIVE ================================ */
+/* NOTE: To support the site being responsive.
+
+/* Tablet size 1100 below */
+
+@media (max-width: 1100px) {
+
+    .about-section {
+        padding: 90px 40px;
+    }
+
+    .about-container {
+        gap: 60px;
+    }
+
+    .about-text h2 {
+        font-size: 36px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .about-stats {
+        gap: 40px;
+    }
+
+    .footer-content {
+        padding: 0 40px 40px 40px;
+    }
+
+}
+
+/* Mobile size 900 below */
+
+@media (max-width: 900px) {
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-width: 8px;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .stat:not(:last-child) {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .stat h3 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .stat p {
+        font-size: 14px;
+    }
+
+}
+
+/* Mobile 768 */
+
+@media (max-width: 768px) {
+
+    .booking-card-bg {
+        padding: 40px 25px;
+        border-radius: 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    .footer-center {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+}

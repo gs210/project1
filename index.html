@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  @author   Gaby Suriel (fully designed from scratch)
+  @project  Project 1: Medford Midlines
+  @page     Homepage (index.html)
+  @date     Feb 10, 2026
+
+  CODE TABLE OF CONTENTS
+  1. Mobile Menu
+  2. Navigation
+  3. Hero
+  4. Ticker
+  5. About
+  6. Live Shows
+  7. Booking
+  8. Footer
+  9. JavaScript (for hamburger menu)
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png">
+    <title>Medford Midlines</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Search Indexing -->
+     <!-- NOTE: Since this is a fake band, I did not want this to be indexed by google. Added this to keep private. -->
+    <meta name="robots" content="noindex">
+
+</head>
+
+<body>
+
+<!-- ================================ MOBILE MENU ================================ -->
+<!-- NOTE: This is the code to add a hamburger menu. Supports responsiveness on mobile/tablet. -->
+<!-- EDIT: Added X to allow users to close hamburger menu for better usability. -->
+
+<div class="mobile-menu">
+    <div class="menu-close">✕</div>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="tour.html">TOUR</a></li>
+        <li><a href="music.html">MUSIC</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+</div>
+
+<!-- ================================ NAVIGATION ================================ -->
+<!-- NOTE: This is the non-mobile desktop navigational bar at top. -->
+
+<nav class="navbar">
+    <div class="logo">MEDFORD MIDLINES</div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ================================ HERO ================================ -->
+<!-- NOTE: Main hero image of band on homepage. Includes primary CTA for contact us page.
+-->
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>MEDFORD MIDLINES</h1>
+        <p>New England's Premier Indie Rock Cover Band</p>
+        <a href="contact.html" class="btn">CONTACT US</a>
+    </div>
+</section>
+
+<!-- ================================ TICKER ================================ -->
+<!-- NOTE: I love marquees/tickers. Added one to add pizzazz and get user attention.
+-->
+
+<section class="ticker">
+    <div class="ticker-track">
+        <span>NEW ENGLAND INDIE ROCK</span>
+        <span>•</span>
+        <span>LIVE SHOWS & EVENTS</span>
+        <span>•</span>
+        <span>NOW BOOKING</span>
+        <span>•</span>
+        <span>SOUND & SETUP INCLUDED</span>
+        <span>•</span>
+        <span>AS SEEN ON MTV'S HOT 100</span>
+
+        <span>NEW ENGLAND INDIE ROCK</span>
+        <span>•</span>
+        <span>LIVE SHOWS & EVENTS</span>
+        <span>•</span>
+        <span>NOW BOOKING</span>
+        <span>•</span>
+        <span>SOUND & SETUP INCLUDED</span>
+        <span>•</span>
+        <span>AS SEEN ON MTV'S HOT 100</span>
+    </div>
+</section>
+
+<!-- ================================ ABOUT ================================ -->
+<!-- NOTE: This section provides info on the band's priamry offerings with CTA.
+ Also includes 3 stats to garner trust,reliability. Video to let users preview.
+ Video image on right is just to represent concept. Photo is there for now. -->
+
+<section class="about-section">
+    <div class="about-container">
+
+        <!-- Left Content -->
+        <div class="about-text">
+            <h5>ABOUT THE BAND</h5>
+            <h2>High Energy Indie Rock Covers</h2>
+
+            <p>
+                Based in Medford, MA, Medford Midlines delivers high-energy
+                indie rock covers with a focus on tight musicianship,
+                strong vocals, and real crowd connection. Drawing from
+                modern and alternative rock favorites, the band brings
+                a polished, dynamic sound to venues, festivals,
+                and private events across New England.
+            </p>
+
+            <a href="about.html" class="btn about-btn">ABOUT US</a>
+
+            <!-- Stats -->
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>200+</h3>
+                    <p>Live Performances</p>
+                </div>
+
+                <div class="stat">
+                    <h3>#1</h3>
+                    <p>MA Voted Best Cover Band 2026</p>
+                </div>
+
+                <div class="stat">
+                    <h3>13+</h3>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="about-image">
+            <div class="image-frame">
+                <img src="images/wedding-band.png" alt="Band Performing">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================================ LIVE SHOWS ================================ -->
+<!-- NOTE: Made the logos and each has a little homage to Tufts. Overall this section
+ shows users festivals/venues they have played before to gain trust/reliability. CTA
+ goes to the tour page with more information on touring. -->
+
+<section class="live-shows">
+    <div class="live-overlay">
+        <h2>LIVE SHOWS & EVENTS</h2>
+        <p>Catch us in action at some of your favorite venues across New England!</p>
+
+        <div class="venue-logos">
+            <img src="images/venue1.png" alt="Tufts Underground">
+            <img src="images/venue2.png" alt="Tusks & Husks Club">
+            <img src="images/venue3.png" alt="Canvas Barricade">
+            <img src="images/venue4.png" alt="Diplomat Tusk Fest">
+        </div>
+
+        <a href="tour.html" class="btn">TOUR SCHEDULE</a>
+    </div>
+</section>
+
+<!-- ================================ BOOKING ================================ -->
+<!-- NOTE: Allows users to get in touch for booking. Quick icons show users a couple
+ event types they typically work. For next version, would like to bring the icons down
+ to have a better UI, but had trouble figuring that out. Next time! -->
+
+<section class="booking">
+    <div class="booking-header">
+        <h2>BOOK MEDFORD MIDLINES</h2>
+        <p>We bring the live energy to you. Book us to bring the fun to your event.</p>
+    </div>
+
+    <div class="booking-content">
+
+        <!-- Form -->
+        <div class="booking-form">
+            <div class="booking-card-bg">
+                <div class="booking-card-content">
+
+                    <h3>Get in Touch</h3>
+                    <p>Reach out to us with your event details and our team will get back to you.</p>
+
+                    <form>
+                        <input type="text" placeholder="Name:" required>
+                        <input type="email" placeholder="Email:" required>
+                        <input type="date" placeholder="Event Date:">
+                        <textarea placeholder="Message / Event Details:" rows="4"></textarea>
+                        <button type="submit" class="btn">SEND INQUIRY</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Types -->
+        <div class="event-types">
+            <div class="event">
+                <img src="images/wedding-icon.png" alt="Weddings">
+                <p>WEDDINGS</p>
+            </div>
+
+            <div class="event">
+                <img src="images/birthday-icon.png" alt="Birthdays">
+                <p>BIRTHDAYS</p>
+            </div>
+
+            <div class="event">
+                <img src="images/festival-icon.png" alt="Festivals">
+                <p>FESTIVALS</p>
+            </div>
+
+            <div class="event">
+                <img src="images/corporate-icon.png" alt="Corporate">
+                <p>CORPORATE</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================================ FOOTER ================================ -->
+<!-- NOTE: Footer has band contact info, links and socials.-->
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <!-- Left -->
+        <div class="footer-left">
+            <h4>MEDFORD MIDLINES</h4>
+            <p>New England Indie Rock Cover Band</p>
+            <p>Based in Medford, MA</p>
+        </div>
+
+        <!-- Center Links -->
+        <div class="footer-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="music.html">Music</a>
+            <a href="tour.html">Tour</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-right">
+            <p><a href="mailto:contact@medfordmidlines.com">contact@medfordmidlines.com</a></p>
+            <p>(123) - 456 - 7890</p>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="https://www.tiktok.com/"><img src="images/tiktok.png" alt="TikTok"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © MEDFORD MIDLINES | MADE BY GSURIE01 | EXAMPLE MADE FOR CLASS
+    </div>
+</footer>
+
+<!-- ================================ JAVASCRIPT ================================ -->
+<!-- NOTE: Javascript for the hamburger menu for mobile responsiveness.-->
+
+<script>
+
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeBtn = document.querySelector(".menu-close");
+
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+});
+</script>
+
+</body>
+</html>
+
+<!--
+  Resources used to learn/reference:
+  - W3Schools (w3schools.com)
+  - MDN Web Docs (developer.mozilla.org)
+  - DevDocs (devdocs.io)
+  - CSS-Tricks (css-tricks.com)
+  - Google Fonts (fonts.google.com)
+  - Canvas course modules
+  - Canva to make graphics/iconography.
+  - Prior UX/UI experience (GA Certified)
+-->

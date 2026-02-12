@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+  @author   Gaby Suriel
+  @project  Project 1: Medford Midlines
+  @page     About
+  @date     Feb 10, 2026
+
+  TABLE OF CONTENTS
+  1. Navigation
+  2. About Intro
+  3. Band Members
+  4. Footer
+  5. JavaScript
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Medford Midlines</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================================ NAVIGATION ================================ -->
+
+<nav class="navbar">
+    <div class="logo">MEDFORD MIDLINES</div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ================================ ABOUT INTRO ================================ -->
+<!-- NOTE: Hero section with a little bio about the band. -->
+
+<section class="about-intro">
+    <div class="about-intro-inner">
+
+        <h1>About The Band</h1>
+
+        <p>
+            Founded in Medford, Massachusetts, Medford Midlines is a four-piece
+            indie rock cover band known for dynamic performances and crowd-driven
+            energy. Each member brings a distinct musical background, creating
+            a sound that is both tight and expressive.
+        </p>
+
+        <p>
+            Specializing in modern alternative favorites and timeless indie
+            anthems, the band performs throughout New England at weddings,
+            corporate events, and live music venues. Their mission is simple:
+            deliver high-quality musicianship with the kind of energy that keeps
+            audiences engaged from the first chord to the final encore.
+        </p>
+
+    </div>
+</section>
+
+<!-- ================================ BAND MEMBERS ================================ -->
+<!-- NOTE: Individual member sections with alternating left/right layouts.
+ Each photo is a royalty free stock photo image. Made up names after Presidents. -->
+
+<!-- Member 1 -->
+<section class="member-section">
+    <div class="member-container">
+
+        <div class="member-image">
+            <img src="images/member1.jpg" alt="Lead Vocalist">
+        </div>
+
+        <div class="member-info">
+            <h2>Alex Jefferson</h2>
+            <p class="member-role">Lead Vocals & Rhythm Guitar</p>
+            <p>
+                With a voice built for indie anthems and packed dance floors,
+                Alex anchors the Midlines' sound. Drawing inspiration from
+                The Killers and Arctic Monkeys, he delivers every performance
+                with intensity and connection.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Member 2 (Alternate Layout) -->
+<section class="member-section alt">
+    <div class="member-container">
+
+        <div class="member-image">
+            <img src="images/member2.jpg" alt="Lead Guitarist">
+        </div>
+
+        <div class="member-info">
+            <h2>Joe Washington</h2>
+            <p class="member-role">Lead Guitar</p>
+            <p>
+                Joe's brings layered textures and soaring riffs that define the
+                band's dynamic live sound. His background in alternative and
+                festival circuits gives the Midlines their signature edge.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Member 3 -->
+<section class="member-section">
+    <div class="member-container">
+
+        <div class="member-image">
+            <img src="images/member3.jpg" alt="Bassist">
+        </div>
+
+        <div class="member-info">
+            <h2>Harry Hamilton</h2>
+            <p class="member-role">Bass</p>
+            <p>
+                Driving grooves and tight rhythms keep every set moving.
+                Harry's steady presence locks in the foundation that powers
+                both high-energy covers and melodic slow builds.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Member 4 (Alternate Layout) -->
+<section class="member-section alt">
+    <div class="member-container">
+
+        <div class="member-image">
+            <img src="images/member4.jpg" alt="Drummer">
+        </div>
+
+        <div class="member-info">
+            <h2>Louis Lincoln</h2>
+            <p class="member-role">Drums</p>
+            <p>
+                Louis delivers precision and punch behind the kit, bringing
+                festival-level energy to every venue. His dynamic style gives
+                the band its unmistakable live intensity.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================================ FOOTER ================================ -->
+
+<footer class="footer">
+    <div class="footer-content">
+
+        <!-- Left -->
+        <div class="footer-left">
+            <h4>MEDFORD MIDLINES</h4>
+            <p>New England Indie Rock Cover Band</p>
+            <p>Based in Medford, MA</p>
+        </div>
+
+        <!-- Center Links -->
+        <div class="footer-center">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="music.html">Music</a>
+            <a href="tour.html">Tour</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Right -->
+        <div class="footer-right">
+            <p><a href="mailto:contact@medfordmidlines.com">contact@medfordmidlines.com</a></p>
+            <p>(123) - 456 - 7890</p>
+
+            <div class="social-icons">
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+                <a href="#"><img src="images/tiktok.png" alt="TikTok"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © MEDFORD MIDLINES | MADE BY GSURIE01 | EXAMPLE MADE FOR CLASS
+    </div>
+</footer>
+
+<!-- ================================ JAVASCRIPT ================================ -->
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("navLinks");
+    menu.classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
